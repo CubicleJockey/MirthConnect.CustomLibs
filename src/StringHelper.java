@@ -5,11 +5,12 @@ public class StringHelper {
      * @param input The string to sanitize.
      * @return The sanitized string.
      */
-    public static String RemoveCarriageReturns(String input) {
+    public static String RemoveReturns(String input) {
         if (input == null || input.trim().isEmpty()) {
             return null;
         }
-        return input.replace("\r", "");
+        String replaced = input.replaceAll("\r\n|\r|\n", " ");
+        return replaced.trim();
     }
 
     /**
