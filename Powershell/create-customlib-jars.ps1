@@ -56,3 +56,5 @@ if (Test-Path -Path $resolvedJavaFilesDirectory) {
 else {
     Write-Host "Invalid or non-existent java files directory path: $resolvedJavaFilesDirectory"
 }
+
+Write-Information("Finished Mirth Connect Custom-Lib JAR creation!")
