@@ -7,3 +7,10 @@ if(correctedText){
 } else {
     logger.warn('Corrected text was empty. Java JAR library "Packages.StringHelper.RemoveCarriageReturns" failed.');
 }
+
+var channelName = 'CustomJavaDemo';
+
+logger.info(channelName + ' end.');
+
+logger.info('Stopping channel [' + channelName + ']');
+ChannelUtil.stopChannel(channelName);
