@@ -1,8 +1,10 @@
 public class StringHelper {
+
     /**
      * Removes all carriage return characters from a string.
      *
-     * @param input The string to sanitize.
+     *
+     * @param input the string to sanitize.
      * @return The sanitized string.
      */
     public static String RemoveReturns(String input) {
@@ -10,6 +12,22 @@ public class StringHelper {
             return null;
         }
         String replaced = input.replaceAll("\r\n|\r|\n", " ");
+        return replaced.trim();
+    }
+
+    /**
+     * Removes all carriage return characters from a string.
+     *
+     *
+     * @param input the string to sanitize.
+     * @param replacement the value to replace returns with.
+     * @return The sanitized string.
+     */
+    public static String RemoveReturns(String input, String replacement) {
+        if (input == null || input.trim().isEmpty()) {
+            return null;
+        }
+        String replaced = input.replaceAll("\r\n|\r|\n", replacement);
         return replaced.trim();
     }
 

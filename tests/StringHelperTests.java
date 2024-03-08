@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,6 +16,20 @@ public class StringHelperTests {
     @MethodSource("ProvideStringsForRemoveCarriageReturns")
     public void RemoveCarriageReturns(String text, String expected){
         assertEquals(expected, StringHelper.RemoveReturns(text));
+    }
+
+    @Test
+    public void RemoveCarriageReturnsAndReplace(){
+        //Arrange
+        String input = "This is a line.\r\nThis is another line.\rFinally the last line.\n";
+        String replacement = "|";
+        String expected = "This is a line.|This is another line.|Finally the last line.|";
+
+        //Act
+        String result = StringHelper.RemoveReturns(input, replacement);
+
+        //Assert
+        assertEquals(expected, result);
     }
 
     private static Stream<Arguments> ProvideStringsForIsNullOrWhitespaceTesting(){
