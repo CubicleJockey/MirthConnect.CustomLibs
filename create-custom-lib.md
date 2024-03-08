@@ -14,5 +14,5 @@
 ```JavaScript
 var text = "Your\rString\rWith\rCarriage\rReturns";
 
-var correctedText = Packages.StringHelper.RemoveCarriageReturns(text);
+var correctedText = Packages.StringHelper.RemoveReturns(text);
 ``` 
